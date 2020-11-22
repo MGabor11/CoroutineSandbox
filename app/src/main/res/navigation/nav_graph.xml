@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navDirectionMain">
+
+    <fragment
+        android:id="@+id/navDirectionMain"
+        android:name="com.mgabor.coroutine.ui.MainFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@id/navDirectionBasicExample"
+            app:destination="@id/navDirectionBasicExample" />
+
+        <action
+            android:id="@id/navDirectionDataBaseExample"
+            app:destination="@id/navDirectionDataBaseExample" />
+
+        <action
+            android:id="@id/navDirectionStateFlow"
+            app:destination="@id/navDirectionStateFlow" />
+
+        <action
+            android:id="@id/navDirectionSuspendFun"
+            app:destination="@id/navDirectionSuspendFun" />
+
+        <action
+            android:id="@id/navDirectionErrorHandling"
+            app:destination="@id/navDirectionErrorHandling" />
+
+        <action
+            android:id="@id/navDirectionScope"
+            app:destination="@id/navDirectionScope" />
+    </fragment>
+    <fragment
+        android:id="@+id/navDirectionBasicExample"
+        android:name="com.mgabor.coroutine.ui.BasicExampleFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_basic_example" />
+
+    <fragment
+        android:id="@+id/navDirectionDataBaseExample"
+        android:name="com.mgabor.coroutine.ui.DataBaseExampleFragment"
+        android:label="DataBaseExampleFragment"
+        tools:layout="@layout/fragment_database_example" />
+
+    <fragment
+        android:id="@+id/navDirectionStateFlow"
+        android:name="com.mgabor.coroutine.ui.StateFlowExampleFragment"
+        android:label="StateFlowExampleFragment"
+        tools:layout="@layout/fragment_state_flow_example" />
+
+    <fragment
+        android:id="@+id/navDirectionSuspendFun"
+        android:name="com.mgabor.coroutine.ui.SuspendFunFragment"
+        android:label="SuspendFunFragment"
+        tools:layout="@layout/fragment_suspend_fun" />
+
+    <fragment
+        android:id="@+id/navDirectionScope"
+        android:name="com.mgabor.coroutine.ui.ScopeFragment"
+        android:label="ScopeFragment"
+        tools:layout="@layout/fragment_scope" />
+
+    <fragment
+        android:id="@+id/navDirectionErrorHandling"
+        android:name="com.mgabor.coroutine.ui.ErrorHandlingFragment"
+        android:label="ErrorHandlingFragment"
+        tools:layout="@layout/fragment_error_handling" />
+</navigation>
