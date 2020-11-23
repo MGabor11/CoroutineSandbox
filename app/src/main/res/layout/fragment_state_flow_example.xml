@@ -26,6 +26,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/countTextWithStateFlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countText"
+            bind:stateValue="@{vm.countState}" />
+
         <Button
             android:id="@+id/counterPositive"
             android:layout_width="wrap_content"
@@ -33,7 +42,7 @@
             android:onClick="@{() -> vm.incrementCount()}"
             android:text="Plus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/countText" />
+            app:layout_constraintTop_toBottomOf="@id/countTextWithStateFlow" />
 
         <Button
             android:id="@+id/doStuff"
@@ -42,7 +51,7 @@
             android:onClick="@{() -> vm.decrementCount()}"
             android:text="Minus"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/countText" />
+            app:layout_constraintTop_toBottomOf="@id/countTextWithStateFlow" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
