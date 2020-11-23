@@ -77,6 +77,7 @@ class ErrorHandlingViewModel @ViewModelInject internal constructor() : ViewModel
             try {
                 Log.d("ERROR_HANDLING", "Clicked on doErrorWithAsync button")
                 delay(3000)
+                Log.d("ERROR_HANDLING", "delay is over")
                 deferredResult.await()
             } catch (exception: Exception) {
                 Log.d("ERROR_HANDLING", "Handle $exception in try/catch")
