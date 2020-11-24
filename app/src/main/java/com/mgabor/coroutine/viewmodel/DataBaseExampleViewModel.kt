@@ -12,7 +12,7 @@ class DataBaseExampleViewModel @ViewModelInject internal constructor(
     private val beerService: BeerService
 ) : ViewModel() {
 
-    val loading: MutableLiveData<Boolean> = MutableLiveData<Boolean>().apply { value = true }
+    val loading: MutableLiveData<Boolean> = MutableLiveData(true)
 
     val beers: LiveData<List<Beer>> = beerService.getStoredBeerList()
         .onEach {

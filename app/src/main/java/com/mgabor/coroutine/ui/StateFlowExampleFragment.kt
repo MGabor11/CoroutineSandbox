@@ -11,13 +11,11 @@ import androidx.fragment.app.viewModels
 import com.mgabor.coroutine.R
 import com.mgabor.coroutine.databinding.FragmentStateFlowExampleBinding
 import com.mgabor.coroutine.util.fragmentScope
-import com.mgabor.coroutine.util.launchOnDefault
 import com.mgabor.coroutine.viewmodel.StateFlowExampleViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_state_flow_example.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.filter
 
 @AndroidEntryPoint
 class StateFlowExampleFragment : Fragment() {
@@ -54,7 +52,7 @@ class StateFlowExampleFragment : Fragment() {
         }
 
         fragmentScope.launchWhenResumed {
-            viewModel.countStateFlow.collect {
+            viewModel.countSharedFlow.collect {
                 withContext(Dispatchers.Main) {
                     countText?.text = "$it"
                 }
@@ -63,7 +61,7 @@ class StateFlowExampleFragment : Fragment() {
 
         fragmentScope.launchWhenResumed {
             delay(5000)
-            viewModel.countStateFlow.collect {
+            viewModel.countSharedFlow.collect {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(requireContext(), "My value: $it", Toast.LENGTH_SHORT).show()
                 }

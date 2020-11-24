@@ -12,7 +12,7 @@ open class StateFlowExampleViewModel @ViewModelInject internal constructor() : V
 
     val countState: StateFlow<Int> = countInnerState
 
-    val countStateFlow: Flow<Int> = flow {
+    val countSharedFlow: Flow<Int> = flow {
         for (i in 1..MAX_EMITTED_VALUE) {
             delay(1000)
             emit(i)

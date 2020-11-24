@@ -23,7 +23,7 @@ class ScopeViewModel @ViewModelInject internal constructor() : ViewModel() {
                 }
             }
             delay(1300L)
-            Log.d("SCOPE", "jmain: I'm tired of waiting!")
+            Log.d("SCOPE", "main: I'm tired of waiting!")
             job.cancelAndJoin()
             Log.d("SCOPE", "main: Now I can quit.")
         }
